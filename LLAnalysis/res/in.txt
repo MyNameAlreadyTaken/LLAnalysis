@@ -1,0 +1,16 @@
+PROGRAM new;
+
+CONST a10=10,b=20,c=30;
+VAR x,y,z:INTEGER;
+
+PROCEDURE fun1(a:INTEGER);
+
+BEGIN
+x:=9;
+IF x<a THEN y:=b;
+END;
+
+BEGIN
+x:=90;
+END.
+
