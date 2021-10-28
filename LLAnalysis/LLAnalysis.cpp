@@ -7,7 +7,7 @@ struct {
     char name[21];
     int type;
     int addr;
-} indent[1000];/*Îª±êÊ¶·û±í*/
+} indent[1000];/*ä¸ºæ ‡è¯†ç¬¦è¡¨*/
 
 
 void setTable() {
@@ -28,13 +28,13 @@ void writeToFile() {
     lastLine = 0;
     line = 1;
     row = 0;
-    if ((f1 = fopen("in.txt", "r")) == NULL) {
+    if ((f1 = fopen("res//in.txt", "r")) == NULL) {
         printf("connot open the file\n");
         exit(0);
-        /*Èç²»ÄÜ´ò¿ªÊäÈëÎÄ¼ş£¬ÏÔÊ¾³ö´íĞÅÏ¢ÍË³ö*/
+        /*å¦‚ä¸èƒ½æ‰“å¼€è¾“å…¥æ–‡ä»¶ï¼Œæ˜¾ç¤ºå‡ºé”™ä¿¡æ¯é€€å‡º*/
     }
 
-    if ((f2 = fopen("out.txt", "w")) == NULL) /*´ò¿ªÊä³öÎÄ¼ş*/ {
+    if ((f2 = fopen("out.txt", "w")) == NULL) /*æ‰“å¼€è¾“å‡ºæ–‡ä»¶*/ {
         printf("connot open the file\n");
         exit(0);
     }
@@ -55,7 +55,7 @@ void domain() {
 	if ((f1 = fopen("res//in.txt", "r")) == NULL) {
 		printf("connot open the file\n");
 		exit(0);
-		/*Èç²»ÄÜ´ò¿ªÊäÈëÎÄ¼ş£¬ÏÔÊ¾³ö´íĞÅÏ¢ÍË³ö*/
+		/*å¦‚ä¸èƒ½æ‰“å¼€è¾“å…¥æ–‡ä»¶ï¼Œæ˜¾ç¤ºå‡ºé”™ä¿¡æ¯é€€å‡º*/
 	}
     rewind(f1);
 
@@ -75,16 +75,16 @@ void domain() {
                 }
 			}
 			else {
-				cout << "´úÂë¶Î²»·ûºÏPASCALÓï·¨¡£\nµÚ" << sym.line <<"ĞĞ³ö´í¡£" << endl;
+				cout << "ä»£ç æ®µä¸ç¬¦åˆPASCALè¯­æ³•ã€‚\nç¬¬" << sym.line <<"è¡Œå‡ºé”™ã€‚" << endl;
 				exit(1);
 			}
 		}
 		else if (X >= 0 && X <= 35){
 			if (X != sym.code) {
                 if (X == 28 || X == 26 || X == 32)
-                    cout << "´úÂë¶Î²»·ûºÏPASCALÓï·¨¡£\nµÚ" << lastLine << "ĞĞ³ö´í¡£" << endl;
+                    cout << "ä»£ç æ®µä¸ç¬¦åˆPASCALè¯­æ³•ã€‚\nç¬¬" << lastLine << "è¡Œå‡ºé”™ã€‚" << endl;
                 else
-                    cout << "´úÂë¶Î²»·ûºÏPASCALÓï·¨¡£\nµÚ" << sym.line << "ĞĞ³ö´í¡£" << endl;
+                    cout << "ä»£ç æ®µä¸ç¬¦åˆPASCALè¯­æ³•ã€‚\nç¬¬" << sym.line << "è¡Œå‡ºé”™ã€‚" << endl;
 				exit(1);
 			}
 			else {
@@ -101,12 +101,12 @@ void domain() {
 			}
 		}
 		else {
-            cout << "´úÂë¶Î²»·ûºÏPASCALÓï·¨¡£\nµÚ" << sym.line << "ĞĞ³ö´í£¬³öÏÖÎŞ·¨Ê¶±ğµÄ×Ö·û¡£" << endl;
+            cout << "ä»£ç æ®µä¸ç¬¦åˆPASCALè¯­æ³•ã€‚\nç¬¬" << sym.line << "è¡Œå‡ºé”™ï¼Œå‡ºç°æ— æ³•è¯†åˆ«çš„å­—ç¬¦ã€‚" << endl;
 			exit(1);
 		}
 	}
 	if (mystack.empty() && feof(f1))
-		cout << "´úÂë¶Î·ûºÏPASCALÓï·¨¡£" << endl;
+		cout << "ä»£ç æ®µç¬¦åˆPASCALè¯­æ³•ã€‚" << endl;
 
 	fclose(f1);
 }
